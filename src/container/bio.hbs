@@ -1,0 +1,93 @@
+<header>
+    <h1>Short biography of <strong>{{name}}</strong></h1>
+    <hr>
+    <br>
+    <p>Birthdate - <em>{{birthdate}}</em></p>
+    <p>Birthplace - <em>{{birthplace}}</em></p>
+    <p>Deathdate - <i>{{deathdate}}</i> </p>
+    <p>Deathplace - <i>{{deathplace}}</i></p>
+    <p>Nationality - <i>{{nationality}}</i> </p>
+    <p>Occupation - <i>{{occupation}}</i> </p>
+    <p>Known for:
+        {{#each known_for}}
+    <ul>
+        <li><i>{{.}}.</i></li>
+    </ul>
+    {{/each}}
+    </p>
+</header>
+<main>
+    <section>
+        <h2>Education:</h2>
+        <hr>
+        {{#each education}}
+        <p><b>Degree:</b> {{degree}} </p>
+        <p><b>Field:</b> {{field}}</p>
+        <p><b>Institution:</b> {{institution}}</p>
+        <p><b>Year:</b> {{year}}</p>
+        {{/each}}
+        <h3>Notable publications:</h3>
+        {{#each notable_publications}}
+        <ul>
+            <li>
+                <q>{{title}}</q> (year - {{year}})
+                <div>Publisher - <cite>{{publisher}}</cite></div>
+            </li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Partners</h2>
+        <hr>
+        {{#each partners}}
+        <ul>
+            <li>{{name}} ({{years}})</li>
+            <div><i>{{relationship}}</i></div>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        {{#each awards}}
+        <h2>Award - <b>{{title}}</b> ({{year}})</h2>
+        <div><i>{{description}}</i></div>
+        <hr>
+        {{/each}}
+        <h3>Influences:</h3>
+        {{#each influences}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+        <h3>Influenced:</h3>
+        {{#each influenced}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+        <h3>Quotes:</h3>
+        {{#each quotes}}
+        <ul>
+            <li>
+                <blockquote><q>{{.}}</q></blockquote>
+            </li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Major discoveries</h2>
+        <hr>
+        {{#each major_discoveries}}
+        <h3><b>{{title}}</b> ({{year}})</h3>
+        <div><i>{{description}}</i></div>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Contributions</h2>
+        <hr>
+        {{#with contributions}}
+        <h3><b>{{title}}</b> ({{year}})</h3>
+        <p>Field - {{field}}</p>
+        <div><i>{{description}}</i></div>
+        {{/with}}
+    </section>
+</main>

@@ -1,0 +1,14 @@
+{{#with service}}
+
+<section class="my-5">
+    <div class="alert bg-success text-light text-center">
+
+        <h2 class="mb-3">{{title}}</h2>
+        <p class="mb-0">{{description}}</p>
+        {{#each buttons}}
+        <a rel="{{type}}" class="btn btn-primary me-1 mt-4" href="{{link}}">{{text}}</a>
+        {{/each}}
+    </div>
+</section>
+
+{{/with}}

@@ -1,0 +1,26 @@
+<div class="row p-1 my-3 p-1">
+    <div class="col-3">
+        <p>{{number}}</p>
+        <p>{{status}}</p>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        {{#with amount}}
+        <p>{{title}}:</p>
+        <span>{{value}}</span>
+        {{/with}}
+    </div>
+
+    <div class="col-4">
+        {{#each images}}
+        <img src="{{this}}" alt="photos">
+        {{/each}}
+    </div>
+
+    <div class="col-2">
+        {{#with button}}
+        <button class="btn {{#if isPrimary}}btn-primary{{/if}}">{{text}}</button>
+        {{/with}}
+    </div>
+    <hr>
+</div>

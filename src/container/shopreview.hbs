@@ -1,0 +1,66 @@
+<main>
+    <section class="row gx-3">
+        {{#with formBlock}}
+        <div class="col-8">
+            <h1>{{header}}</h1>
+            <p class="mb-3">{{rating.title}}: {{rating.value}}</p>
+            {{#with actionBlock}}
+            <ul class="nav nav-tabs mb-5">
+                {{#each tabs}}
+                <li class="nav-item">
+                    <a class="nav-link {{#if isActive}}active{{/if}} " href="#"><span class="px-5">{{text}}</span></a>
+                </li>
+                {{/each}}
+            </ul>
+            <hr class="my-5 bold">
+            {{#with field}}
+            <div class="input-group">
+                <input class="form-control col-1" type="text" placeholder="{{placeholder}}">
+                <a class="btn-secondary btn" href="{{button.link}}">{{button.text}}</a>
+            </div>
+            {{/with}}
+            {{/with}}
+            <hr class="my-5">
+            {{#with feedbackBlock}}
+            <h2 class="mb-5 display-6"><strong>{{title}}</strong></h2>
+            {{#each buttons}}
+            <a class="mt-5 btn {{#if isSuccess}}btn-success{{/if}} {{#if isWarning}}btn-warning{{/if}} {{#if isDanger}}btn-danger{{/if}}"
+                href="{{link}}">{{text}}</a>
+            {{/each}}
+            {{/with}}
+        </div>
+
+        <div class="col-4">
+            {{#with goodsInfo}}
+            <div class="card mb-3">
+                <img class="pt-3 card-img-top" src="{{photo}}" alt="photo">
+                <p class="display-6 card-title">{{name}}</p>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                <p class="display-6">{{price}}</p>
+                {{#each buttons}}
+                <div class="col">
+                    <a class="mb-3 btn {{#if isPrimary}}btn-primary{{/if}} {{#if isSecondary}}btn-secondary{{/if}}"
+                        href="{{link}}">{{text}}</a>
+                </div>
+                {{/each}}
+                </div>
+
+            </div>
+            <div class="card">
+                <p class="card-body">{{seller.title}}: <span><strong>{{seller.value}}</strong></span></p>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    {{>reviewItem}}
+
+    {{>shopaction}}
+
+</main>

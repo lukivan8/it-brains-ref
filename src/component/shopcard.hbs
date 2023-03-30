@@ -1,0 +1,22 @@
+<div class="row g-2">
+    {{#each cards}}
+
+    <div class="col-4">
+
+        <div class="card" style="height: 300px;">
+
+            <img src="{{image}}" alt="{{title}}">
+
+            <div class="card-body">
+                <h6 class="card-title">{{title}}
+                    {{#if isHot}}
+                    <div class="badge rounded-pill bg-warning">Hot</div> {{/if}}
+                    {{#if idNew}} <div class="badge rounded-pill bg-primary">New</div> {{/if}}
+                </h6>
+
+                <p class="card-text">{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

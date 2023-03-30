@@ -1,0 +1,64 @@
+<main>
+    <h1 style="text-align: center;">Languages</h1>
+    {{#each web.languages}}
+    <section>
+        <h2 style="text-align: center;">
+            <dt><strong>{{name}}</strong></dt> <small>version:</small> <i
+                style="color: rgb(30, 56, 80);">{{version}}</i>
+        </h2>
+        <hr>
+        <dd>{{description}}</dd>
+        {{#if elements}}<h3>Elements:</h3>{{/if}}
+        {{#each elements}}
+        <b>
+            <u>
+                <dt>{{name}}</dt>
+            </u>
+        </b>
+        <dd>{{description}}</dd>
+        <p>Attributes:</p>
+        {{#each attributes}}
+        <ul>
+            <li>
+                <dt><i>{{name}}</i></dt>
+                <dd>{{description}}</dd>
+            </li>
+        </ul>
+        {{/each}}
+        {{/each}}
+        {{#if properties}} <h3>Properties:</h3> {{/if}}
+        {{#each properties}}
+        <b><u>
+                <dt>{{name}}</dt>
+            </u></b>
+        <dd>{{description}}</dd>
+        <p>Values:</p>
+        {{#each values}}
+        <ul>
+            <li>
+                <dt><i>{{value}}</i></dt>
+                <dd>{{description}}</dd>
+            </li>
+        </ul>
+        {{/each}}
+        {{/each}}
+        {{#if functions}} <h3>Functions:</h3> {{/if}}
+        {{#each functions}}
+        <b><u>
+                <dt>{{name}}</dt>
+            </u></b>
+        <dd>{{description}}</dd>
+        <p>Parameters:</p>
+        {{#each parameters}}
+        <ul>
+            <li>
+                <dt><i>{{name}} (type - {{type}})</i></dt>
+                <dd>{{description}}</dd>
+            </li>
+        </ul>
+        {{/each}}
+        {{/each}}
+
+    </section>
+    {{/each}}
+</main>

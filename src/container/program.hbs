@@ -1,0 +1,74 @@
+{{#with program.excursion}}
+<header>
+    <h1 style="width: 700px;">{{name}} of {{location.city}} | {{location.country}}
+        ({{date}})</h1>
+    <hr>
+</header>
+<main>
+
+    <h2 style="text-align: center;">Program :</h2>
+
+    {{#each program}}
+    <section>
+        <em>
+            <u>
+                <h2>{{name}} </h2>
+            </u>
+        </em>
+        <p>Type: {{type}} </p>
+        <p>Duration - {{duration}} days</p>
+        <p>Details: </p>
+
+        <ul style="list-style: none;">
+            <li>
+                {{#with details.museum}}
+                <h3>{{name}}</h3>
+                <hr>
+                {{#with location}}
+                <p><i>Location:</i> {{address}}, {{city}}, {{country}} </p>
+                {{/with}}
+                <i>
+                    <p>Exhibits:</p>
+                </i>
+                {{#each exhibits}}
+                <ul>
+                    <li>
+                        <p><strong>{{name}}</strong> {{#if artist}}({{artist}}){{/if}} {{#if
+                            audio_guide}}<sup>*audio guide</sup>{{/if}}</p>
+                        <div><dfn>{{description}}</dfn></div>
+                    </li>
+                </ul>
+                {{/each}}
+                {{/with}}
+
+
+
+                {{#with details.venue}}
+                <h3>{{name}}</h3>
+                <hr>
+                {{#with location}}
+                <p><i>Location:</i> {{address}}, {{city}}, {{country}}</p>
+                {{/with}}
+                {{/with}}
+
+                {{#each details.performers}}
+                <i>
+                    <p>Performers:</p>
+                </i>
+                <ul>
+                    <li>{{name}} ({{type}})</li>
+                </ul>
+                {{/each}}
+
+
+                {{#with details.guide}}
+                <p><i>Guide - </i><b>{{name}}</b> (language - {{language}}) / rating - {{rating}} </p>
+                {{/with}}
+            </li>
+        </ul>
+    </section>
+
+
+    {{/each}}
+</main>
+{{/with}}

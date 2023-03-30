@@ -1,0 +1,20 @@
+<section class="my-5">
+    {{#with subscribe}}
+
+    <div class="alert bg-dark text-light row">
+
+        <div class=" col-6">
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+        </div>
+
+
+        <div class="col-6 text-end">
+            {{#each buttons}}
+            <a rel="{{type}}" class="btn btn-primary me-1 mt-4" href="{{link}}">{{text}}</a>
+            {{/each}}
+        </div>
+
+    </div>
+    {{/with}}
+</section>

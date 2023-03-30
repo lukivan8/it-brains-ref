@@ -1,0 +1,151 @@
+<header>
+    <h1 class="text-center"><strong>{{make}} {{model}}</strong> {{color}} ({{year}})</h1>
+    <hr>
+</header>
+<main>
+    <section>
+        <u>
+            <h2 class="text-center mb-3">Features:</h2>
+        </u>
+        {{#with features}}
+        <ul class="row text-center list-group list-group-flush list-group-horizontal">
+
+            <li class="list-group-item col-4">
+                <h3><i>Interior</i></h3>
+                <hr>
+                {{#with interior}}
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item"><b>seats:</b>
+                        {{#with seats}}
+                        <p>material - {{material}}</p>
+                        <p>color - {{color}}</p>
+                        <p>heated - {{#if heated}} yes {{/if}}</p>
+                        <p>ventilated - {{#if ventilated}} yes {{/if}}</p>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item"><b>dashboard:</b>
+                        {{#with dashboard}}
+                        <p>material - {{material}}</p>
+                        <p>color - {{color}}</p>
+                        <p>display:
+                            {{#with display}}
+                        <ul>
+                            <li>type - {{type}}</li>
+                            <li>size - {{size}}</li>
+                            <li>resolution - {{resolution}}</li>
+                            <li>touchscreen - {{#if touchscreen}}yes {{/if}}</li>
+                        </ul>
+                        {{/with}}
+                        </p>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item"><b>audio:</b>
+                        {{#with audio}}
+                        <p>system - {{system}}</p>
+                        <p>speakers - {{speakers}}</p>
+                        <p>subwoofer - {{#if subwoofer}} yes {{/if}}</p>
+                        <p>bluetooth - {{#if bluetooth}} yes {{/if}}</p>
+                        <p>USB - {{#if USB}} yes {{/if}}</p>
+                        {{/with}}
+                    </li>
+                </ul>
+                {{/with}}
+            </li>
+
+            <li class="list-group-item col-4">
+                <h3><i>Exterior</i></h3>
+                <hr>
+                {{#with exterior}}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>wheels:</b>
+                        {{#with wheels}}
+                        <p>size - {{size}}</p>
+                        <p>type - {{type}}</p>
+                        <p>color - {{color}}</p>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item"><b>headlights:</b>
+                        {{#with headlights}}
+                        <p>type - {{type}}</p>
+                        <p>brightness - {{brightness}}</p>
+                        <p>automatic - {{#if automatic}}yes{{/if}}</p>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item"><b>sunroof:</b>
+                        {{#with headlights}}
+                        <p>type - {{type}}</p>
+                        <p>size - {{size}}</p>
+                        <p>automatic - {{#if automatic}}yes{{/if}}</p>
+                        {{/with}}
+                    </li>
+                </ul>
+                {{/with}}
+            </li>
+
+            <li class="list-group-item  col-4">
+                <h3><i>Safety</i></h3>
+                <hr>
+                {{#with safety}}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>airbags:</b>
+                        {{#with airbags}}
+                        <p>front - {{front}}</p>
+                        <p>side - {{side}}</p>
+                        <p>knee - {{knee}}</p>
+                        <p>rear - {{rear}}</p>
+                        {{/with}}
+                    </li>
+                    <li class="list-group-item"><b>assistance:</b>
+                        {{#with assistance}}
+                        <p>blind_spot_monitoring - {{#if blind_spot_monitoring}}yes{{/if}}</p>
+                        <p>rear_cross_traffic_alert - {{#if rear_cross_traffic_alert}}yes{{/if}}</p>
+                        <p>lane_departure_warning - {{#if lane_departure_warning}}yes{{/if}}</p>
+                        <p>adaptive_cruise_control - {{#if adaptive_cruise_control}}yes{{/if}}</p>
+                        <p>collision_warning - {{#if collision_warning}}yes{{/if}}</p>
+                        {{/with}}
+                    </li>
+                </ul>
+                {{/with}}
+            </li>
+        </ul>
+
+        {{/with}}
+    </section>
+    <section>
+        <u>
+            <h2 style="text-align: center;">Engine</h2>
+        </u>
+        {{#with engine}}
+        <p><i>Type</i> - {{type}} </p>
+        <p><i>Displacement</i> - {{displacement}} </p>
+        <p><i>Horsepower</i> - {{horsepower}} </p>
+        <p><i>Torque</i> - {{torque}} </p>
+        {{#with transmission}}
+        <p><i>Transmission</i> : type - {{type}}, gears - {{gears}} </p>
+        {{/with}}
+        {{/with}}
+    </section>
+    <section>
+        <u>
+            <h2 style="text-align: center;">Fuel economy</h2>
+        </u>
+        {{#with fuel_economy}}
+        <p><i>City</i> - {{city}} </p>
+        <p><i>Highway</i> - {{highway}} </p>
+        <p><i>Combined</i> - {{combined}} </p>
+        {{/with}}
+    </section>
+    <section>
+        <u>
+            <h2 style="text-align: center;">Price</h2>
+        </u>
+        {{#with price}}
+        <p><i>Base</i> - {{base}} </p>
+        <p><i>Destination</i> - {{destination}} </p>
+        {{#with options}}
+        <p><i>Options</i> : navigation - {{navigation}}, moonroof - {{moonroof}}, premium_paint - {{premium_paint}} </p>
+        {{/with}}
+        <p><i>Total</i> - {{total}} </p>
+        {{/with}}
+    </section>
+</main>

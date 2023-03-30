@@ -1,0 +1,24 @@
+<hr class="my-5">
+
+<footer>
+
+    <div class="d-flex justify-content-between">
+
+        {{#each footer}}
+
+
+        <ul class="nav flex-column ">
+
+            {{#each this}}
+            <li>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+            </li>
+            {{/each}}
+
+        </ul>
+
+        {{/each}}
+
+    </div>
+
+</footer>

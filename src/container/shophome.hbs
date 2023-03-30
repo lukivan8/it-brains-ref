@@ -1,0 +1,42 @@
+<main>
+    <section>
+        {{#with newsBlock}}
+        <h1 class="text-center mb-5">{{title}}</h1>
+
+        {{> shoppost}}
+
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with goodsBlock}}
+
+        <ul class="nav nav-tabs mb-5">
+
+            {{#each tabs}}
+            <li class="nav-link {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}">
+                {{name}}
+            </li>
+            {{/each}}
+
+        </ul>
+
+
+        {{> shopcard}}
+
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+
+    {{>shopsubscribe}}
+
+    <hr class="my-5">
+
+    <section>
+        {{> shopaction}}
+    </section>
+</main>

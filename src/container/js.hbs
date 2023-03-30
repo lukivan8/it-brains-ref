@@ -1,0 +1,100 @@
+<head>
+    <h1>What is {{name}}</h1>
+    <strong>
+        <dt>{{name}}</dt>
+    </strong>
+    <dd>{{description}}</dd>
+</head>
+
+<main>
+
+    <section>
+        <h2>History</h2>
+        {{#with history}}
+        <p>Year - {{year}}</p>
+        <p>Founder -{{founder}}</p>
+        {{/with}}
+    </section>
+    <section>
+        <h2>Data types:</h2>
+        {{#each types}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Syntax</h2>
+        {{#with syntax}}
+        <ul>
+            <li>Variables:
+                {{#each variables}}
+                <ul>
+                    <li>{{.}}</li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>Functions:
+                {{#each functions}}
+                <ul>
+                    <li>{{.}}</li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>Conditionals:
+                {{#each conditionals}}
+                <ul>
+                    <li>{{.}}</li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>Loops:
+                {{#each loops}}
+                <ul>
+                    <li>{{.}}</li>
+                </ul>
+                {{/each}}
+            </li>
+            <li>Classes:
+                {{#each classes}}
+                <ul>
+                    <li>{{.}}</li>
+                </ul>
+                {{/each}}
+            </li>
+        </ul>
+        {{/with}}
+    </section>
+    <section>
+        <h2>Features:</h2>
+        {{#each features}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Libraries:</h2>
+        {{#each libraries}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Tools:</h2>
+        {{#each tools}}
+        <ul>
+            <li>{{.}}</li>
+        </ul>
+        {{/each}}
+    </section>
+    <section>
+        <h2>Community</h2>
+        {{#each community}}
+        <ul>
+            <li>{{name}} (type: {{type}})</li>
+        </ul>
+        {{/each}}
+    </section>
+</main>

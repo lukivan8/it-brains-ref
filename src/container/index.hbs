@@ -1,0 +1,27 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<main>
+    <h1 class="text-center mb-3">Список страниц</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate ipsa, a sint quisquam tempora optio soluta,
+        est veritatis iure quibusdam adipisci tempore impedit nihil, rerum omnis repellat ipsum voluptas in.</p>
+   
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="/index">Resume</a>
+        </li>
+        {{#each links}}
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="{{href}}">{{name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</main>
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}

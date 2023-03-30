@@ -1,0 +1,14 @@
+<div class="row g-1">
+    {{#each cards}}
+    <div class="col-3">
+        <div class="card text-bg-secondary" style="height: 300px;">
+            <div class="card-header" style="min-height: 90px;">
+                {{title}}
+                {{#if isTop}} <div class="badge rounded-pill text-bg-success">Top</div> {{/if}}
+                {{#if idNew}} <div class="badge rounded-pill text-bg-danger">New</div> {{/if}}
+            </div>
+            <div class="card-body">{{description}}</div>
+        </div>
+    </div>
+    {{/each}}
+</div>
