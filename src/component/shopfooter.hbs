@@ -2,20 +2,18 @@
 
 <footer>
 
-    <div class="d-flex justify-content-between">
+    <div class="row g-5">
 
         {{#each footer}}
-
-
-        <ul class="nav flex-column ">
-
-            {{#each this}}
-            <li>
-                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
-            </li>
-            {{/each}}
-
-        </ul>
+            <div class="nav col-2">
+                <div>
+                    {{#each this}}
+                        <div>
+                            <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
 
         {{/each}}
 

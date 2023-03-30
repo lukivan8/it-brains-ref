@@ -1,21 +1,27 @@
-<div class="row p-1 border my-3">
-    <img class="col-2" src="{{image}}" alt="photos">
-    <div class="col-6 d-flex flex-column justify-content-center">
-        <p class="h3">{{name}}</p>
-        <p>{{description}}</p>
-    </div>
-    <div class="d-flex flex-column col-1 justify-content-center">
-        {{#with price}}
-        {{title}}
-        <span>{{value}}</span>
-        {{/with}}
-    </div>
-    <div class="col-1">{{mount}}</div>
+<div class="p-1 card my-3">
+    <div class="row">
+        <img class="col-2" src="{{image}}" alt="photos">
+        <div class="col-6">
+            <p class="h3">{{name}}</p>
+            <p>{{description}}</p>
+        </div>
+        <div class="col-1 gy-5">
+            {{#with price}}
+                    {{title}}
+                    <p>{{value}}</p>
+            {{/with}}
+        </div>
+        <div class="col-1">{{mount}}</div>
 
-    <div class="d-flex flex-column col-2 justify-content-evenly">
-        {{#each buttons}}
-        <button
-            class="btn {{#if isPrimary}}btn-primary{{/if}} {{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</button>
-        {{/each}}
+        <div class="col-2">
+            {{#each buttons}}
+                <div class="row mx-1">
+                    <button
+                            class="btn {{#if isPrimary}}btn-primary{{/if}} {{#if
+                                    isDanger}}btn-outline-danger{{/if}} col gy-4 gx-1">{{text}}</button>
+                </div>
+            {{/each}}
+        </div>
     </div>
+
 </div>
