@@ -1,8 +1,8 @@
 <main>
     <section>
-        <h1 style="text-align: center;">{{name}} users</h1>
+        <h1>{{name}} users</h1>
         <hr>
-        <ol style="display: flex;">
+        <ol>
             {{#each users}}
             <li>
                 <p><b>User ID:</b> <i>{{id}}</i></p>
@@ -10,7 +10,7 @@
                 <p><b>Age:</b> <i>{{age}}</i></p>
                 <p><b>Friends:</b></p>
 
-                <ul>
+            <ul>
                     {{#each friends}}
                     <li>
                         <p>ID: <i>{{id}}</i></p>
@@ -99,6 +99,8 @@
                         {{/if}}
                     </li>
                     {{/each}}
-                </ul>
+        </ul>
+        </li>
+        </ol>
     </section>
 </main>

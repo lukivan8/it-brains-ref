@@ -1,12 +1,12 @@
 {{#with program.excursion}}
 <header>
-    <h1 style="width: 700px;">{{name}} of {{location.city}} | {{location.country}}
+    <h1>{{name}} of {{location.city}} | {{location.country}}
         ({{date}})</h1>
     <hr>
 </header>
 <main>
 
-    <h2 style="text-align: center;">Program :</h2>
+    <h2 >Program :</h2>
 
     {{#each program}}
     <section>
@@ -19,7 +19,7 @@
         <p>Duration - {{duration}} days</p>
         <p>Details: </p>
 
-        <ul style="list-style: none;">
+        <ul>
             <li>
                 {{#with details.museum}}
                 <h3>{{name}}</h3>
