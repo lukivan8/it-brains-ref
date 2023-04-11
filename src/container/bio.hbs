@@ -11,7 +11,7 @@
     <p>Known for:
         {{#each known_for}}
     <ul>
-        <li><i>{{this}}.</i></li>
+        <li><i>{{this}}</i></li>
     </ul>
     {{/each}}
     </p>
@@ -55,20 +55,20 @@
         <h3>Influences:</h3>
         {{#each influences}}
         <ul>
-            <li>{{.}}</li>
+            <li>{{this}}</li>
         </ul>
         {{/each}}
         <h3>Influenced:</h3>
         {{#each influenced}}
         <ul>
-            <li>{{.}}</li>
+            <li>{{this}}</li>
         </ul>
         {{/each}}
         <h3>Quotes:</h3>
         {{#each quotes}}
         <ul>
             <li>
-                <blockquote><q>{{.}}</q></blockquote>
+                <blockquote><q>{{this}}</q></blockquote>
             </li>
         </ul>
         {{/each}}
