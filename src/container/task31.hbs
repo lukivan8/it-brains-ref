@@ -180,31 +180,37 @@
 
     <section>
         {{#with footer}}
-        <h5>{{title}}</h5>
+            <h5>{{title}}</h5>
 
-        <div class="row">
-            <div class="col-3">
-                {{#each navigation}}
-                <div>
-                    <a class="btn btn-outline-secondary text-info" href="{{href}}">{{text}}</a>
+            <div class="row">
+                <div class="col-2">
+                    <div class="row gy-2">
+                        {{#each navigation}}
+                            <div class="col-12">
+                                <a class="btn btn-outline-secondary text-info" href="{{href}}">{{text}}</a>
+                            </div>
+                        {{/each}}
+                    </div>
                 </div>
-                {{/each}}
-            </div>
-            <div class="col-3">
-                {{#each socialMedia}}
-                <div>
-                    <a class="btn btn-outline-dark" href="{{link}}">{{name}}</a>
+                <div class="col-2">
+                    <div class="row gy-2">
+                        {{#each socialMedia}}
+                            <div class="col-12">
+                                <a class="btn btn-outline-dark" href="{{link}}">{{name}}</a>
+                            </div>
+                        {{/each}}
+                    </div>
                 </div>
-                {{/each}}
-            </div>
-            <div class="col-3">
-                {{#each partners}}
-                <div>
-                    <a class="btn btn-outline-info" href="{{link}}">{{name}}</a>
+                <div class="col-3">
+                    <div class="row gy-2">
+                        {{#each partners}}
+                            <div class="col-12">
+                                <a class="btn btn-outline-info" href="{{link}}">{{name}}</a>
+                            </div>
+                        {{/each}}
+                    </div>
                 </div>
-                {{/each}}
             </div>
-        </div>
 
         {{/with}}
     </section>
