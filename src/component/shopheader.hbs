@@ -1,18 +1,14 @@
 <header class="mb-5">
     {{#with navigation}}
-    <div class="card p-3">
-        <nav class="nav row">
-            <img class="col" width="100" height="40" src="{{logo.src}}" alt="logo">
-            <div class="col-4"></div>
-            <ul class="col-5">
-                <li class="row">
+        <div class="card p-3">
+            <nav class="nav">
+                <div class="row">
                     {{#each links}}
                     <a class="nav-link col" href="{{href}}">{{text}}</a>
                     {{/each}}
                     <a class="disabled nav-link col" href="#">Shophome</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                </div>
+            </nav>
+        </div>
     {{/with}}
 </header>
