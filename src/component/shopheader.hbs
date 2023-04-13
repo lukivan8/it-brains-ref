@@ -2,12 +2,10 @@
     {{#with navigation}}
         <div class="card p-3">
             <nav class="nav">
-                <div class="row">
                     {{#each links}}
-                    <a class="nav-link col" href="{{href}}">{{text}}</a>
+                        <a class="nav-link" href="{{href}}">{{text}}</a>
                     {{/each}}
-                    <a class="disabled nav-link col" href="#">Shophome</a>
-                </div>
+                <a class="disabled nav-link" href="#">Shophome</a>
             </nav>
         </div>
     {{/with}}
