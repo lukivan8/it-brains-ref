@@ -3,13 +3,13 @@
     <div class="card p-3">
         <nav class="nav row">
             <img class="col" width="100" height="40" src="{{logo.src}}" alt="logo">
-            <div class="col-6"></div>
-            <ul class="col-4">
-                <li class="d-flex">
+            <div class="col-4"></div>
+            <ul class="col-5">
+                <li class="row">
                     {{#each links}}
-                    <a class="nav-link" href="{{href}}">{{text}}</a>
+                    <a class="nav-link col" href="{{href}}">{{text}}</a>
                     {{/each}}
-                    <a class="disabled nav-link" href="#">Shophome</a>
+                    <a class="disabled nav-link col" href="#">Shophome</a>
                 </li>
             </ul>
         </nav>

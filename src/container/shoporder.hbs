@@ -62,7 +62,7 @@
                             <select class="form-select">
                                 <option selected>{{placeholder}}</option>
                                 {{#each options}}
-                                <option value="{{value}}">{{text}}</option>
+                                    <option value="{{value}}">{{text}}</option>
                                 {{/each}}
                             </select>
                         </div>
@@ -70,52 +70,55 @@
                     </div>
                 </div>
 
-                <div class="form-check row d-flex">
-                    {{#each delivery_type}}
-                    <div class="col-6">
-                        <input class="form-check-input" {{#if isChecked}} checked {{/if}} type="radio"
-                            name="delivery_type">
-                        <label class="form-check-label">
-                            {{type}}
-                        </label>
+                    <div class="form-check">
+                        {{#each delivery_type}}
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-check-input" {{#if isChecked}} checked {{/if}} type="radio"
+                                           name="delivery_type">
+                                    <label class="form-check-label">
+                                        {{type}}
+                                    </label>
+                                </div>
+                                <div class="col text-end">
+                                    {{value}}
+                                </div>
+                            </div>
+
+                        {{/each}}
                     </div>
-                    <div class="col-6 text-end">
-                        {{value}}
-                    </div>
+
+                    <hr class="my-4">
+
+                    <h2 class="mb-2">Оплата</h2>
+                    {{#each payment}}
+                        <input class="form-check-input" {{#if @first}} checked {{/if}} type="radio" name="payment">
+                        <label class="form-check-label">{{type}}</label>
+                        <div class="form-text">{{description}}</div>
                     {{/each}}
-                </div>
 
-                <hr class="my-4">
+                    <hr class="my-4">
 
-                <h2 class="mb-2">Оплата</h2>
-                {{#each payment}}
-                <input class="form-check-input" {{#if @first}} checked {{/if}} type="radio" name="payment">
-                <label class="form-check-label">{{type}}</label>
-                <div class="form-text">{{description}}</div>
-                {{/each}}
+                    <h2 class="mb-2">Контактні дані отримувача</h2>
 
-                <hr class="my-4">
+                    <div class="row">
+                        {{#each contact}}
+                            <div class="col-6 g-2">
+                                <label class="form-label">{{label}}</label>
+                                <input class="form-control" placeholder="{{placeholder}}" type="text">
+                                <div class="form-text">{{caption}}</div>
+                            </div>
+                        {{/each}}
+                    </div>
 
-                <h2 class="mb-2">Контактні дані отримувача</h2>
+                    <hr class="my-4">
 
-                <div class="row">
-                    {{#each contact}}
-                    <div class="col-6 g-2">
+                    {{#with coment}}
                         <label class="form-label">{{label}}</label>
-                        <input class="form-control" placeholder="{{placeholder}}" type="text">
-                        <div class="form-text">{{caption}}</div>
-                    </div>
-                    {{/each}}
-                </div>
+                        <input class="form-control" type="text" placeholder="{{placeholder}}">
+                    {{/with}}
 
-                <hr class="my-4">
-
-                {{#with coment}}
-                <label class="form-label">{{label}}</label>
-                <input class="form-control" type="text" placeholder="{{placeholder}}">
-                {{/with}}
-
-                <hr class="my-4">
+                    <hr class="my-4">
 
                 {{/with}}
 
@@ -233,44 +236,56 @@
             </div>
 
 
-
-
-
             <div class="col-4">
 
                 <div class="card mb-3">
                     <div class="card-body">
-                        {{#each action_block}}
-                        <button
-                            class="btn d-flex my-1 {{#if isPrimary}}btn-success{{/if}} {{#if isDanger}}btn-danger{{/if}} {{#if isInfo}}btn-info text-light{{/if}}">
-                            {{text}}
-                        </button>
-                        {{/each}}
+                        <div class="row">
+                            {{#each action_block}}
+                                <div class="col-12">
+                                    <button
+                                            class="btn my-1 {{#if isPrimary}}btn-success{{/if}} {{#if
+                                                    isDanger}}btn-danger{{/if}} {{#if
+                                                    isInfo}}btn-info text-light{{/if}}">
+                                        {{text}}
+                                    </button>
+                                </div>
+
+                            {{/each}}
+                        </div>
+
                     </div>
                 </div>
 
                 {{#with total}}
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="cart-title mb-3">{{title}}</h3>
-                        {{#each item_list}}
-                        <span class="d-flex">{{name}}: {{price}}</span>
-                        {{/each}}
-                        <hr>
-                        {{#each additional_info}}
-                        <span class="d-flex">{{text}}: {{value}}</span>
-                        {{/each}}
-                        <hr>
-                        {{#with total_price}}
-                        <span>{{text}}: {{value}}</span>
-                        {{/with}}
-                        <hr>
-                        {{#each button}}
-                        <button
-                            class="d-flex my-1 btn {{#if isPrimary}}btn-primary{{/if}} {{#if isOutline}}btn-outline-primary{{/if}}">{{text}}</button>
-                        {{/each}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="cart-title mb-3">{{title}}</h3>
+                            <div class="row">
+                                {{#each item_list}}
+                                    <span>{{name}}: {{price}}</span>
+                                {{/each}}
+                            </div>
+
+                            <hr>
+                            {{#each additional_info}}
+                                <div class="row">
+                                    <span>{{text}}: {{value}}</span>
+                                </div>
+
+                            {{/each}}
+                            <hr>
+                            {{#with total_price}}
+                                <span>{{text}}: {{value}}</span>
+                            {{/with}}
+                            <hr>
+                            {{#each button}}
+                                <button
+                                        class="my-1 btn {{#if isPrimary}}btn-primary{{/if}} {{#if
+                                                isOutline}}btn-outline-primary{{/if}}">{{text}}</button>
+                            {{/each}}
+                        </div>
                     </div>
-                </div>
                 {{/with}}
 
             </div>

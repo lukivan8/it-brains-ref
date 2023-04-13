@@ -31,11 +31,14 @@
                 <p class="small ">{{delivery}}</p>
             </div>
             <div class="col-3"></div>
-            <div class="col-3 d-flex flex-column justify-content-evenly">
-                {{#each buttons}}
-                <a class="btn {{#if isSuccess}}btn-success{{/if}} {{#if isOutline}}btn-outline-success{{/if}}"
-                    href="{{link}}">{{text}}</a>
-                {{/each}}
+            <div class="col-3">
+                <div class="row gy-3">
+                    {{#each buttons}}
+                        <a class="btn {{#if isSuccess}}btn-success{{/if}} {{#if isOutline}}btn-outline-success{{/if}} col-12"
+                           href="{{link}}">{{text}}</a>
+                    {{/each}}
+                </div>
+
             </div>
         </div>
         {{/with}}
